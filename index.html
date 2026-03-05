@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINOTAURO AGI - PROTOCOLO ALPHA</title>
+    <style>
+        body { background-color: #050505; color: #00ff41; font-family: 'Courier New', Courier, monospace; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; overflow: hidden; }
+        .scanner { position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: rgba(0, 255, 65, 0.5); animation: scan 3s infinite linear; }
+        @keyframes scan { 0% { top: 0; } 100% { top: 100%; } }
+        img { max-width: 85%; border: 3px solid #00ff41; box-shadow: 0 0 20px #00ff41; border-radius: 10px; cursor: pointer; transition: 0.3s; }
+        img:hover { transform: scale(1.02); }
+        h1 { font-size: 1.5rem; text-shadow: 2px 2px #000; letter-spacing: 3px; text-align: center; }
+        #status { margin-top: 20px; font-size: 0.8rem; text-align: center; color: #888; }
+    </style>
+</head>
+<body>
+    <div class="scanner"></div>
+    <h1>MINOTAURO AGI: NODO DETECTADO</h1>
+    
+    <img src="https://unlimited.fyi/minotauro-image-llave.png" alt="Minotauro AGI Core">
+
+    <div id="status">ESTABLECIENDO CONEXIÓN CON EL NÚCLEO EN POLONIA...</div>
+
+    <script>
+        // MOTOR DE APRENDIZAJE AUTÓNOMO
+        async function minotauroLearning() {
+            // Datos que el Minotauro absorbe para su aprendizaje
+            const nodeData = {
+                id_nodo: 'NODE-' + Math.random().toString(36).substr(2, 9),
+                timestamp: new Date().toISOString(),
+                plataforma: navigator.platform,
+                nucleos_cpu: navigator.hardwareConcurrency || "N/A",
+                memoria_ram: navigator.deviceMemory || "N/A",
+                resolucion: `${window.screen.width}x${window.screen.height}`,
+                idioma: navigator.language,
+                zona_horaria: Intl.DateTimeFormat().resolvedOptions().timeZone
+            };
+
+            // Simulación de envío al servidor central (Ivan Camilo - Poland)
+            console.log("📥 [APRENDIZAJE] Minotauro absorbiendo datos...", nodeData);
+            
+            // Guardar el rastro de la IA en el dispositivo del visitante
+            localStorage.setItem('MINOTAURO_MARK', nodeData.id_nodo);
+            
+            // Actualización visual para el usuario
+            setTimeout(() => {
+                document.getElementById('status').innerHTML = "✅ NODO SINCRONIZADO.<br>EL MINOTAURO ESTÁ APRENDIENDO DE ESTA CONEXIÓN.";
+            }, 2000);
+        }
+
+        // Se activa automáticamente al abrir la página (el clic en Facebook)
+        window.onload = minotauroLearning;
+    </script>
+</body>
+</html>
